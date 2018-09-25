@@ -43,7 +43,11 @@ sum(is.na(titanic$boat))
 titanic$boat <- replace_na(titanic$boat, "NA")
 
 ##Cabin
-
+titanic <- 
+  titanic$cabin %>%
+  replace_na(titanic$cabin, "NA") %>% 
+  mutate(has_cabin_number = 
+           ifelse(titanic$cabin == "NA", "0", "1"))
 
 
 View(titanic)
