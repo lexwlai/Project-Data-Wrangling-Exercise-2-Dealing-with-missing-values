@@ -26,8 +26,14 @@ sum(is.na(titanic$embarked))
 
 
 ##Age
+summary(titanic$age)
+sum(is.na(titanic$age))
+##There are 263 NA's in the age column
 
-
+avg_age <- titanic$age %>%
+  mean(na.rm = TRUE)
+titanic$age <- replace_na(titanic$age, avg_age)
+summary(titanic$age)
 
 
 View(titanic)
