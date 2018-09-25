@@ -36,5 +36,15 @@ titanic$age <- replace_na(titanic$age, avg_age)
 summary(titanic$age)
 
 
+##Lifeboat
+summary(titanic$boat)
+is.na(titanic$boat)
+sum(is.na(titanic$boat))
+titanic$boat <- replace_na(titanic$boat, "NA")
+
+##Cabin
+
+
+
 View(titanic)
       
